@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>暗影流金</copyright>
-        <lastBuildDate>Sat, 28 Dec 2024 10:34:13 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 28 Dec 2024 13:07:16 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>git相关操作</title>
         <link>https://ayljzj.github.io/p/git%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</link>
         <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
@@ -304,7 +304,7 @@ problems文件夹中存放问题以及Axiom公理集，测试完output中会存�
 使用&lt;code&gt;./eprover --verson&lt;/code&gt;或&lt;code&gt;./vampire --verson&lt;/code&gt;查看对应软件的版本&lt;br&gt;
 使用命令行版本测试时，将&lt;code&gt;cse&lt;/code&gt;替换为自己导出的&lt;code&gt;cse&lt;/code&gt;&lt;br&gt;
 替换eprover的版本时，要将&lt;code&gt;eprover&lt;/code&gt;和&lt;code&gt;mcs_eprover.jar&lt;/code&gt;同时替换才正确。&lt;br&gt;
-3.1版本的Eprover会出现异常，则需要进行以下操作（重新打开一个终端，输入下述指令）：&lt;br&gt;&lt;/p&gt;
+3.1以上的版本的Eprover会出现异常，则需要进行以下操作（重新打开一个终端，输入下述指令）：&lt;br&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -313,7 +313,8 @@ problems文件夹中存放问题以及Axiom公理集，测试完output中会存�
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ps -ef|grep eprover
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;然后使用&lt;code&gt;kill&lt;/code&gt;指令将前三个icdc进程杀死&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;然后使用&lt;code&gt;kill&lt;/code&gt;指令将前三个icdc进程杀死&lt;br&gt;
+拓展(输入./vampire &amp;ndash;ignore_missing on &amp;ndash;mode casc -t 300 +一个问题的绝对路径，就能得到下面这样的证明搜索路径和时间，这样子只能测单个的原始时间)&lt;br&gt;&lt;/p&gt;
 &lt;h3 id=&#34;命令行版本测试命令&#34;&gt;命令行版本测试命令
 &lt;/h3&gt;&lt;p&gt;测试CSE和Eprover融合系统命令：&lt;br&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
