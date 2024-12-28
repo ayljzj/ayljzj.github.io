@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>暗影流金</copyright>
-        <lastBuildDate>Sat, 28 Dec 2024 08:19:24 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 28 Dec 2024 08:32:34 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>git相关操作</title>
         <link>https://ayljzj.github.io/p/git%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</link>
         <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
@@ -144,6 +144,339 @@
     &gt;Alpine WSL&lt;/a&gt;&lt;br&gt;
 &lt;img src=&#34;./auto.assets/1.png&#34; width=&#34;60%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;span-idjump22-修改环境span&#34;&gt;&lt;span id=&#34;jump2&#34;&gt;2. 修改环境&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;切换镜像&#34;&gt;切换镜像
+&lt;/h3&gt;&lt;p&gt;修改源：找到 &lt;code&gt;cd /etc/apt&lt;/code&gt; 路径下的 sources.list 文件对其进行修改&lt;br&gt;在此路径下打开命令行，输入sudo vim sources.list&lt;br&gt;命令行中相关操作命令如下：&lt;br&gt;•	g 光标到头部&lt;br&gt;•	d 删除&lt;br&gt;•	shift + g 全部删除&lt;br&gt;•	i 写入&lt;br&gt;•	粘贴 以下 阿里源 或 清华源&lt;br&gt;•	ESC 退出写入模式&lt;br&gt;•	:wq 保存退出&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;复制镜像源&#34;&gt;复制镜像源
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;##测试版源  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 源码  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;##测试版源  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-src http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# Canonical 合作伙伴和附加  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb http://archive.canonical.com/ubuntu/ xenial partner  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb http://extras.ubuntu.com/ubuntu/ xenial main
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;更新镜像&#34;&gt;更新镜像
+&lt;/h3&gt;&lt;p&gt;操作完成后使用如下命令更新镜像：&lt;br&gt;•	&lt;code&gt;sudo apt-get updata&lt;/code&gt; 更新&lt;br&gt;•	&lt;code&gt;sudo apt-get upgrade&lt;/code&gt; 更新&lt;br&gt;&lt;code&gt;sudo add-apt-repository ppa:openjdk-r/ppa&lt;/code&gt;&lt;br&gt;安装jdk：&lt;code&gt;sudo apt-get install openjdk-8-jdk&lt;/code&gt;&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;拓展篇(在环境Ubuntu/Mint物理机上安装python环境)：&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls /usr/bin/python*
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;update-alternatives --list python
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo update-alternatives --config python
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install python3-pip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;h2 id=&#34;span-idjump33-相关代码修改基础项span&#34;&gt;&lt;span id=&#34;jump3&#34;&gt;3. 相关代码修改（基础项）&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;基础代码修改项&#34;&gt;基础代码修改项
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;strong&gt;必改项&lt;/strong&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2217&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Resolution.cpp&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;for(int i=0;i&lt;cla-&gt;uLitNum;++1i){删除1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;使用776行的main函数&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;替换原始800行的main函数&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;验证检查&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;原始代码&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;修改后，会生成run文件&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Prover.cpp&lt;br&gt;319&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;if(1){&lt;br&gt;        FileOp::delRunFiles();&lt;br&gt;    }&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;if(0){&lt;br&gt;        FileOp::delRunFiles();&lt;br&gt;    }&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;选改项&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;main.cpp&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;debug&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;编译release&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;216&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;#define newTriDebug&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;//#define newTriDebug&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;755&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;//child = fork();&lt;br&gt;    if (0 == 0)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;child = fork();&lt;br&gt;if (child == 0) {&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;生成文件&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;文字变元输出&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cout&amp;lt;&amp;lt; QLit-&amp;gt;subTerm-&amp;gt;ToString()&amp;lt;&amp;lt;endl;//debug输出当前文字项
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cout&amp;lt;&amp;lt;QLit-&amp;gt;subTerm-&amp;gt;ToStringBind()&amp;lt;&amp;lt;endl;//debug输出当前文字项和变元元替换项
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;命令行版本测试命令&#34;&gt;命令行版本测试命令
+&lt;/h3&gt;&lt;p&gt;测试CSE和Eprover融合系统命令：&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;java -jar mcs_epr.jar CSE_E problems 0 1 4 1 300 0 1 10
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;测试CSE和Vampire融合系统命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;java -jar mcs_vampire.jar CSE_V problems 0 1 2 1 260 30 1 10
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;单独测试CSE系统命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;java -jar mcs_scs.jar CSE problems 0 1 0 1 1 150
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;其中260 20 为时间参数
+如果那两个数值变为300 0，意味着是原始测出来的数据，
+前一个数值代表eprover测的时间，后一个数值代表CSE测的时间，
+300秒减去前两个数值所剩下的时间也是eprover参与的&lt;/p&gt;
+&lt;h2 id=&#34;span-idjump44-纠错span&#34;&gt;&lt;span id=&#34;jump4&#34;&gt;4. 纠错&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;错误1证明器不存在&#34;&gt;错误1：证明器不存在
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;./auto.assets/error1/error1.png&#34; width=&#34;50%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;
+检查dist文件夹下有没有这个cprover_priority&lt;br&gt;
+&lt;img src=&#34;./auto.assets/error1/solve1.png&#34; width=&#34;70%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;
+若没有那就把cse 改成这个名字，然后再添加可执行权限&lt;br&gt;
+&lt;img src=&#34;./auto.assets/error1/solve2.png&#34; width=&#34;70%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;错误2判定异常&#34;&gt;错误2：判定异常
+&lt;/h3&gt;&lt;p&gt;若验证检查结果异常，需记录判定情况，需要记录的有：
+策略：多策略模式下为桌面的strategy文件夹；单策略模式下为strategy.txt文件
+判定过程文件夹：桌面output文件夹下与判定例子同名的文件夹。
+在代码操作中，指针越界&lt;/p&gt;
+&lt;h3 id=&#34;错误3格式转换失败&#34;&gt;错误3：格式转换失败
+&lt;/h3&gt;&lt;p&gt;可能的原因：
+1、没有放置公理集Axioms
+2、没有使用Eprover融合系统，没有使用到转换的文件
+3、由于问题的原因，可能无法转换
+4、可能转换成功，但是界面显示错误&lt;/p&gt;
+&lt;h3 id=&#34;错误4调试失败一般少见&#34;&gt;错误4：调试失败（一般少见）
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;问题：&lt;/strong&gt;
+同样的例子在调试过程中超时导致无法判定
+但是在带界面版本能得到不可满足
+在别的电脑上调试也能成功
+&lt;strong&gt;解决方法：&lt;/strong&gt;
+重装ubuntu系统&lt;br&gt;
+&lt;img src=&#34;./auto.assets/error4/error4.png&#34; width=&#34;70%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>自动推理（环境搭建）</title>
+        <link>https://ayljzj.github.io/p/%E8%87%AA%E5%8A%A8%E6%8E%A8%E7%90%86%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+        <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://ayljzj.github.io/p/%E8%87%AA%E5%8A%A8%E6%8E%A8%E7%90%86%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;“Work. ”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言
+&lt;/h2&gt;&lt;p&gt;安装前可以浏览这三个教程：&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/stellan/p/14409090.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;wsl安装教程&lt;/a&gt;
+&lt;br&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/m0_74063149/article/details/137725577&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;安装wsl后虚拟机无法启动&lt;/a&gt;
+&lt;br&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/opus/861067292754051097&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;原生ubuntu安装教程&lt;/a&gt;&lt;br&gt;&lt;br&gt;
+如果想浏览相关的内容，可直接点击下面跳转：&lt;br&gt;
+1.&lt;a class=&#34;link&#34; href=&#34;#jump1&#34; &gt;安装系统&lt;/a&gt;&lt;br&gt;
+2.&lt;a class=&#34;link&#34; href=&#34;#jump2&#34; &gt;修改环境&lt;/a&gt;&lt;br&gt;
+3.&lt;a class=&#34;link&#34; href=&#34;#jump3&#34; &gt;相关代码修改（基础项）&lt;/a&gt;&lt;br&gt;
+4.&lt;a class=&#34;link&#34; href=&#34;#jump4&#34; &gt;纠错&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;a-idjump11-安装系统a&#34;&gt;&lt;a id=&#34;jump1&#34;&gt;1. 安装系统&lt;/a&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;步骤1---启用适用于-linux-的-windows-子系统&#34;&gt;步骤1 - 启用适用于 Linux 的 Windows 子系统：
+&lt;/h3&gt;&lt;p&gt;需要先启用“适用于 Linux 的 Windows 子系统”可选功能，然后才能在 Windows 上安装 Linux 分发。
+以管理员身份打开 PowerShell 并运行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;步骤2---启用虚拟机功能&#34;&gt;步骤2 - 启用虚拟机功能：
+&lt;/h3&gt;&lt;p&gt;安装 WSL 2 之前，必须启用“虚拟机平台”可选功能。 计算机需要虚拟化功能才能使用此功能。
+以管理员身份打开 PowerShell 并运行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;步骤3---下载-linux-内核更新包&#34;&gt;步骤3 - 下载 Linux 内核更新包：
+&lt;/h3&gt;&lt;p&gt;以管理员身份打开 PowerShell 并运行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wsl --install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;步骤4---将-wsl-2-设置为默认版本&#34;&gt;步骤4 - 将 WSL 2 设置为默认版本：
+&lt;/h3&gt;&lt;p&gt;打开 PowerShell，然后在安装新的 Linux 发行版时运行以下命令，将 WSL 2 设置为默认版本：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wsl --set-default-version 2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;步骤5---安装所选的-linux-分发版&#34;&gt;步骤5 - 安装所选的 Linux 分发版：
+&lt;/h3&gt;&lt;p&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9pjn388hp8c9&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ubuntu 16.04 LTS&lt;/a&gt;&lt;br&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9N9TNGVNDL3Q&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ubuntu 18.04 LTS&lt;/a&gt;&lt;br&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9n6svws3rx71&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ubuntu 20.04 LTS&lt;/a&gt;&lt;br&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9NJFZK00FGKV&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;openSUSE Leap 15.1&lt;/a&gt;&lt;br&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9MZ3D1TRP8T1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SUSE Linux Enterprise Server 12 SP5&lt;/a&gt;&lt;br&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9PN498VPMF3Z&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SUSE Linux Enterprise Server 15 SP1&lt;/a&gt;&lt;br&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9PKR34TNCV07&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Kali Linux&lt;/a&gt;&lt;br&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9MSVKQC78PK6&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Debian GNU/Linux&lt;/a&gt;&lt;br&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9n6gdm4k2hnc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fedora Remix for WSL&lt;/a&gt;&lt;br&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9NV1GV1PXZ6P&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pengwin&lt;/a&gt;&lt;br&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9N8LP0X93VCP&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pengwin Enterprise&lt;/a&gt;&lt;br&gt;•	&lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/store/apps/9p804crf0395&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Alpine WSL&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;./auto.assets/1.png&#34; width=&#34;60%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;a-idjump22-修改环境a&#34;&gt;&lt;a id=&#34;jump2&#34;&gt;2. 修改环境&lt;/a&gt;
 &lt;/h2&gt;&lt;h3 id=&#34;切换镜像&#34;&gt;切换镜像
 &lt;/h3&gt;&lt;p&gt;修改源：找到 &lt;code&gt;cd /etc/apt&lt;/code&gt; 路径下的 sources.list 文件对其进行修改&lt;br&gt;在此路径下打开命令行，输入sudo vim sources.list&lt;br&gt;命令行中相关操作命令如下：&lt;br&gt;•	g 光标到头部&lt;br&gt;•	d 删除&lt;br&gt;•	shift + g 全部删除&lt;br&gt;•	i 写入&lt;br&gt;•	粘贴 以下 阿里源 或 清华源&lt;br&gt;•	ESC 退出写入模式&lt;br&gt;•	:wq 保存退出&lt;br&gt;&lt;/p&gt;
 &lt;h3 id=&#34;复制镜像源&#34;&gt;复制镜像源
