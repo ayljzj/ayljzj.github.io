@@ -289,7 +289,9 @@
 &lt;p&gt;“Work. ”&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言
-&lt;/h2&gt;&lt;p&gt;进行此项内容前，请确保已经完成环境的配置。&lt;br&gt;&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;进行此项内容前，请确保已经完成环境的配置。&lt;br&gt;
+相关网站：&lt;a class=&#34;link&#34; href=&#34;https://www.tptp.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;TPTP官网&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;1实验前准备&#34;&gt;1、实验前准备
 &lt;/h2&gt;&lt;h3 id=&#34;准备条件&#34;&gt;准备条件
 &lt;/h3&gt;&lt;p&gt;拷贝好dist文件夹，确保内部具有正确的文件&lt;br&gt;
