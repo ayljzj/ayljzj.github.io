@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>暗影流金</copyright>
-        <lastBuildDate>Sun, 29 Dec 2024 06:14:52 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 29 Dec 2024 13:48:28 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>git相关操作</title>
         <link>https://ayljzj.github.io/p/git%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</link>
         <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
@@ -490,6 +490,128 @@ problems文件夹中存放问题以及Axiom公理集，测试完output中会存�
 &lt;h3 id=&#34;3挂脚本&#34;&gt;3挂脚本
 &lt;/h3&gt;&lt;p&gt;当岸边长满树的时候，或者长较多树的时候，可以尝试开始挂航母脚本，促进沙滩树的生长。&lt;br&gt;
 &lt;img src=&#34;./boom-beach.assets/沙滩树3.png&#34; width=&#34;50%&#34; align=&#34;center&#34; /&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>江西理工大学校园网自动登录</title>
+        <link>https://ayljzj.github.io/p/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</link>
+        <pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://ayljzj.github.io/p/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;“NetWork”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言
+&lt;/h2&gt;&lt;p&gt;这篇文章针对本人的需求设计而来，也为了需要自动登录校园网的同学提供一个相关思路。&lt;br&gt;
+本文所处的地理位置为：江西理工大学三江校区（东区）&lt;br&gt;
+网络环境：电信网&lt;br&gt;
+由于电信网的原因，每登录24小时，网络就会自动断开，又要去浏览器页面重新登陆（对于一个把电脑扔在工作室的人来说，这是一件令人头疼的事）&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1原理&#34;&gt;1、原理
+&lt;/h2&gt;&lt;p&gt;首先打开&lt;a class=&#34;link&#34; href=&#34;http://10.17.8.18/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;登录校园网&lt;/a&gt;的网页（前提是电脑已经连接了校园网JXUST-WLAN）&lt;br&gt;
+按下 F12 打开浏览器开发者工具（如果没反应那就 fn + F12）&lt;br&gt;
+输入账号密码，登录进入校园网&lt;br&gt;
+找到这一串请求url，就是通过这一串url就能够成功登录校园网，把这一串复制下来&lt;/p&gt;
+&lt;p&gt;c=Portal&amp;amp;a=login&amp;amp;callback=dr1711540&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%40cmcc&amp;amp;user_password=你的校园网密码。&lt;br&gt;
+其中，user_account就是学号；user_password就是密码；login_method是运营商信息。里面信息不需要全部保留也可以登录校园网，保留至user_password的结束位置也能登陆。&lt;br&gt;
+在搜索栏直接粘贴上文所说的url点击回车，若出现下图的情况即联网成功。&lt;br&gt;
+&lt;strong&gt;原理可行！&lt;/strong&gt;&lt;br&gt;
+那我只要每次开机的时候电脑能自动访问这段url那不就自动登录校园网了吗？&lt;br&gt;
+直接进行实操&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2实际操作&#34;&gt;2、实际操作
+&lt;/h2&gt;&lt;p&gt;直接在桌面新建一个txt文本文件，将文件后缀名修改为&lt;code&gt;.bat&lt;/code&gt;格式&lt;br&gt;
+右键选择编辑或用记事本打开，在里面粘贴如下代码：&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@echo off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:: 设置控制台为 UTF-8 编码
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chcp 65001
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:: 启用延迟变量扩展
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;setlocal EnableDelayedExpansion
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:: 初始化计数器
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;set /a counter=0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:loop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:: 增加计数器
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;set /a counter+=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:: 输出当前是第几次判断
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;echo 当前为第 !counter! 次判断。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:: 检测是否有网络连接（超时 10 秒）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ping -n 1 -w 10000 baidu.com &amp;gt;nul 2&amp;gt;&amp;amp;1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;if errorlevel 1 (
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    echo 无网络连接（ping超时10秒），尝试在浏览器中访问登录页面...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    :: 指定浏览器路径（假设使用 Chrome）打开指定网址
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    start &amp;#34;&amp;#34; &amp;#34;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%%40telecom&amp;amp;user_password=你的校园网密码&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    echo 登录页面已在浏览器中打开。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;) else (
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    echo 网络连接正常，跳过登录操作...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:: 倒计时循环输出（每分钟输出一次）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;for /l %%i in (5,-1,1) do (
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    set /a minutes=%%i
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    echo 倒计时（结束后会检测网络）：!minutes! 分
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    timeout /t 60 &amp;gt;nul
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:: 循环检测
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;goto loop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;我对代码做一个简单的解释：（如果不想了解原理可以跳过该解释）&lt;br&gt;
+这段代码主要功能是持续监测网络连接状况，并在网络断开时自动通过浏览器打开校园网登录页面。&lt;br&gt;首先，代码设置控制台编码为 UTF-8，并启用延迟变量扩展以便在循环中动态使用变量。然后，它初始化一个计数器，用于记录执行循环的次数。&lt;br&gt;接下来，进入一个无限循环，程序每次都会通过 ping 命令检测是否能够连接到百度，如果检测到网络连接失败，则输出“无网络连接”并尝试在默认浏览器中打开指定的校园网登录页面。如果网络正常，程序则输出“网络连接正常”，跳过登录操作。&lt;br&gt;为了避免频繁检测，代码会在每次检测后进入倒计时状态，每分钟输出倒计时信息，直到检测下次网络连接状态。整个过程会持续进行，直到手动终止脚本。&lt;br&gt;&lt;br&gt;&lt;br&gt;
+注意：start &amp;quot;&amp;quot; &amp;ldquo;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%%40telecom&amp;amp;user_password=你的校园网密码&amp;rdquo;&lt;br&gt;
+这段代码的url需要你自己通过上面的方法去获取&lt;br&gt;
+接下来最重要的事一定要仔细看！&lt;br&gt;接下来最重要的事一定要仔细看！&lt;br&gt;接下来最重要的事一定要仔细看！&lt;br&gt;重要的事说三遍！&lt;br&gt;
+请检查你自己所获取到的url，在&lt;code&gt;校园网账号&lt;/code&gt;后面应该会有&lt;code&gt;%40&lt;/code&gt;字符，由于复制进脚本后，由脚本通过start命令发起访问会将&lt;code&gt;%40&lt;/code&gt;识别为@，从而导致输进浏览器的url缺失这一关键信息&lt;br&gt;
+解决方法为在&lt;code&gt;%40&lt;/code&gt;这个字符前再加一个&lt;code&gt;%&lt;/code&gt;，这样就能确保url的正确读取并访问。&lt;br&gt;
+接下来运行这个.bat文件，就会自动向校园网登录端发送请求，然后登录你的校园网账号，并且每五分钟会ping一次百度的网站。&lt;br&gt;
+若ping不通，则会再次执行登录请求。&lt;br&gt;
+请在运行过程中不要关闭此命令行窗口！&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3进阶操作&#34;&gt;3、进阶操作
+&lt;/h2&gt;&lt;p&gt;为了使开机能自动运行该脚本，需要将该脚本文件加入开机自启动。&lt;br&gt;
+按win+r打开运行窗口，输入下述执行进入到开机启动目录：&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;shell:startup
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;将编写好的.bat脚本复制进去，即可做到开机自动运行。&lt;br&gt;
+&lt;img src=&#34;./auto-login-net-jxust\auto-login-net-jxust.assets/start.png&#34; width=&#34;50%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;&lt;/p&gt;
 </description>
         </item>
         
