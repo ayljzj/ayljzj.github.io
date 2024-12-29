@@ -512,7 +512,7 @@ problems文件夹中存放问题以及Axiom公理集，测试完output中会存�
 按下 F12 打开浏览器开发者工具（如果没反应那就 fn + F12）&lt;br&gt;
 输入账号密码，登录进入校园网&lt;br&gt;
 找到这一串请求url，就是通过这一串url就能够成功登录校园网，把这一串复制下来&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%%40telecom&amp;amp;user_password=你的校园网密码。&amp;lt;br&amp;gt;&lt;/code&gt;
+&lt;p&gt;&lt;code&gt;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%%40telecom&amp;amp;user_password=你的校园网密码。&lt;/code&gt;&lt;br&gt;
 其中，user_account就是学号；user_password就是密码；login_method是运营商信息。里面信息不需要全部保留也可以登录校园网，保留至user_password的结束位置也能登陆。&lt;br&gt;
 在搜索栏直接粘贴上文所说的url点击回车，若出现下图的情况即联网成功。&lt;br&gt;
 &lt;strong&gt;原理可行！&lt;/strong&gt;&lt;br&gt;
@@ -606,11 +606,11 @@ problems文件夹中存放问题以及Axiom公理集，测试完output中会存�
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	shell:startup
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;shell:startup
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;将编写好的.bat脚本复制进去，即可做到开机自动运行。&lt;br&gt;
-&lt;img src=&#34;./auto-login-net-jxust\auto-login-net-jxust.assets/start.png&#34; width=&#34;50%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;&lt;/p&gt;
+&lt;img src=&#34;./auto-login-net-jxust.assets/start.png&#34; width=&#34;50%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
