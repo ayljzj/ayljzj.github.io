@@ -592,7 +592,8 @@ problems文件夹中存放问题以及Axiom公理集，测试完output中会存�
 这段代码主要功能是持续监测网络连接状况，并在网络断开时自动通过浏览器打开校园网登录页面。&lt;br&gt;首先，代码设置控制台编码为 UTF-8，并启用延迟变量扩展以便在循环中动态使用变量。然后，它初始化一个计数器，用于记录执行循环的次数。&lt;br&gt;接下来，进入一个无限循环，程序每次都会通过 ping 命令检测是否能够连接到百度，如果检测到网络连接失败，则输出“无网络连接”并尝试在默认浏览器中打开指定的校园网登录页面。如果网络正常，程序则输出“网络连接正常”，跳过登录操作。&lt;br&gt;为了避免频繁检测，代码会在每次检测后进入倒计时状态，每分钟输出倒计时信息，直到检测下次网络连接状态。整个过程会持续进行，直到手动终止脚本。&lt;br&gt;&lt;br&gt;
 注意：start &amp;quot;&amp;quot; &amp;ldquo;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%%40telecom&amp;amp;user_password=你的校园网密码&amp;rdquo;&lt;br&gt;
 这段代码的url需要你自己通过上面的方法去获取。&lt;br&gt;
-接下来最重要的事一定要仔细看！&lt;br&gt;接下来最重要的事一定要仔细看！&lt;br&gt;接下来最重要的事一定要仔细看！&lt;br&gt;重要的事说三遍！&lt;br&gt;
+&lt;font color=red&gt;接下来最重要的事一定要仔细看！&lt;/font&gt;
+&lt;font color=red&gt;接下来最重要的事一定要仔细看！&lt;/font&gt;&lt;br&gt;&lt;font color=red&gt;接下来最重要的事一定要仔细看！&lt;/font&gt;&lt;br&gt;&lt;font color=red&gt;重要的事说三遍！！！&lt;/font&gt;&lt;br&gt;
 请检查你自己所获取到的url，在&lt;code&gt;校园网账号&lt;/code&gt;后面应该会有&lt;code&gt;%40&lt;/code&gt;字符，由于复制进脚本后，由脚本通过start命令发起访问会将&lt;code&gt;%40&lt;/code&gt;识别为@，从而导致输进浏览器的url缺失这一关键信息&lt;br&gt;
 解决方法为在&lt;code&gt;%40&lt;/code&gt;这个字符前再加一个&lt;code&gt;%&lt;/code&gt;，这样就能确保url的正确读取并访问。&lt;br&gt;
 接下来运行这个.bat文件，就会自动向校园网登录端发送请求，然后登录你的校园网账号，并且每五分钟会ping一次百度的网站。&lt;br&gt;
