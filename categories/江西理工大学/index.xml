@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>暗影流金</copyright>
-        <lastBuildDate>Mon, 30 Dec 2024 09:27:19 +0800</lastBuildDate><atom:link href="https://ayljzj.github.io/categories/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 30 Dec 2024 10:42:24 +0800</lastBuildDate><atom:link href="https://ayljzj.github.io/categories/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>江西理工大学校园网自动登录</title>
         <link>https://ayljzj.github.io/p/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</link>
         <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
@@ -113,7 +113,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;我对代码做一个简单的解释：（如果不想了解原理可以跳过该解释）&lt;br&gt;
-这段代码主要功能是持续监测网络连接状况，并在网络断开时自动通过浏览器打开校园网登录页面。&lt;br&gt;首先，代码设置控制台编码为 UTF-8，并启用延迟变量扩展以便在循环中动态使用变量。然后，它初始化一个计数器，用于记录执行循环的次数。&lt;br&gt;接下来，进入一个无限循环，程序每次都会通过 ping 命令检测是否能够连接到百度，如果检测到网络连接失败，则输出“无网络连接”并尝试在默认浏览器中打开指定的校园网登录页面。如果网络正常，程序则输出“网络连接正常”，跳过登录操作。&lt;br&gt;为了避免频繁检测，代码会在每次检测后进入倒计时状态，每分钟输出倒计时信息，直到检测下次网络连接状态。整个过程会持续进行，直到手动终止脚本。&lt;br&gt;&lt;br&gt;
+这段代码主要功能是持续监测网络连接状况，并在网络断开时自动通过浏览器打开校园网登录页面。&lt;br&gt;首先，代码设置控制台编码为 UTF-8，并启用延迟变量扩展以便在循环中动态使用变量。然后，它初始化一个计数器，用于记录执行循环的次数。&lt;br&gt;接下来，进入一个无限循环，程序每次都会通过 ping 命令检测是否能够连接到百度，如果检测到网络连接失败，则输出“无网络连接”并尝试在默认浏览器中打开指定的校园网登录页面。如果网络正常，程序则输出“网络连接正常”，跳过登录操作。&lt;br&gt;然后，为了避免频繁检测，代码会在每次检测后进入倒计时状态，每分钟输出倒计时信息，直到检测下次网络连接状态。整个过程会持续进行，直到手动终止脚本。&lt;br&gt;&lt;br&gt;
 注意：start &amp;quot;&amp;quot; &amp;ldquo;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%%40telecom&amp;amp;user_password=你的校园网密码&amp;rdquo;&lt;br&gt;
 这段代码的url需要你自己通过上面的方法去获取。&lt;br&gt;&lt;/p&gt;
 &lt;ul&gt;
