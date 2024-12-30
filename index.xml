@@ -34,11 +34,11 @@
 &lt;code&gt;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%%40telecom&amp;amp;user_password=你的校园网密码。&lt;/code&gt;&lt;br&gt;
 其中，user_account就是学号；user_password就是密码；login_method是运营商信息。里面信息不需要全部保留也可以登录校园网，保留至user_password的结束位置也能登陆。&lt;br&gt;&lt;/li&gt;
 &lt;li&gt;在搜索栏直接粘贴上文所说的url点击回车，若出现下图的情况即联网成功。&lt;br&gt;
-&lt;img src=&#34;./auto-login-net-jxust.assets/login-success.png&#34; width=&#34;80%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;
-&lt;strong&gt;原理可行！&lt;/strong&gt;&lt;br&gt;
-那我只要每次开机后电脑能自动访问这条url那不就自动登录校园网了吗？&lt;br&gt;
-&lt;big&gt;直接进入实操!&lt;/big&gt;&lt;/li&gt;
+&lt;img src=&#34;./auto-login-net-jxust.assets/login-success.png&#34; width=&#34;80%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;原理可行！&lt;/strong&gt;&lt;br&gt;
+那我只要每次开机后电脑能自动访问这条url那不就自动登录校园网了吗？&lt;br&gt;
+&lt;big&gt;直接进入实操!&lt;/big&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;2实际操作&#34;&gt;2、实际操作
 &lt;/h2&gt;&lt;ul&gt;
