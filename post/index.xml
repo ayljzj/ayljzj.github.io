@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>暗影流金</copyright>
-        <lastBuildDate>Mon, 30 Dec 2024 01:16:28 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 30 Dec 2024 01:18:19 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>江西理工大学校园网自动登录</title>
         <link>https://ayljzj.github.io/p/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</link>
         <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
@@ -121,13 +121,13 @@
 &lt;li&gt;&lt;font color=red&gt;接下来最重要的事一定要仔细看！&lt;/font&gt;&lt;br&gt;&lt;/li&gt;
 &lt;li&gt;&lt;font color=red&gt;接下来最重要的事一定要仔细看！&lt;/font&gt;&lt;br&gt;&lt;/li&gt;
 &lt;li&gt;&lt;font color=red&gt;接下来最重要的事一定要仔细看！&lt;/font&gt;&lt;br&gt;&lt;/li&gt;
-&lt;li&gt;&lt;font color=red&gt;重要的事说三遍！！！&lt;/font&gt;&lt;br&gt;
-请检查你自己所获取到的url，在&lt;code&gt;校园网账号&lt;/code&gt;后面应该会有&lt;code&gt;%40&lt;/code&gt;字符，由于复制进脚本后，由脚本通过start命令发起访问会将&lt;code&gt;%40&lt;/code&gt;识别为@，从而导致输进浏览器的url缺失这一关键信息&lt;br&gt;
+&lt;li&gt;&lt;font color=red&gt;重要的事说三遍！！！&lt;/font&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;请检查你自己所获取到的url，在&lt;code&gt;校园网账号&lt;/code&gt;后面应该会有&lt;code&gt;%40&lt;/code&gt;字符，由于复制进脚本后，由脚本通过start命令发起访问会将&lt;code&gt;%40&lt;/code&gt;识别为@，从而导致输进浏览器的url缺失这一关键信息&lt;br&gt;
 解决方法为在&lt;code&gt;%40&lt;/code&gt;这个字符前再加一个&lt;code&gt;%&lt;/code&gt;，这样就能确保url的正确读取并访问。&lt;br&gt;
 接下来运行这个.bat文件，就会自动向校园网登录端发送请求，然后登录你的校园网账号，并且每五分钟会ping一次百度的网站。&lt;br&gt;
 若ping不通，则会再次执行登录请求。&lt;br&gt;
-请在运行过程中不要关闭此命令行窗口！&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
+请在运行过程中不要关闭此命令行窗口！&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3进阶操作&#34;&gt;3、进阶操作
 &lt;/h2&gt;&lt;p&gt;为了使开机能自动运行该脚本，需要将该脚本文件加入开机自启动。&lt;br&gt;
 按win+r打开运行窗口，输入下述执行进入到开机启动目录：&lt;br&gt;&lt;/p&gt;
