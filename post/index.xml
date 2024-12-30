@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>暗影流金</copyright>
-        <lastBuildDate>Mon, 30 Dec 2024 01:18:19 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 30 Dec 2024 01:20:48 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>江西理工大学校园网自动登录</title>
         <link>https://ayljzj.github.io/p/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</link>
         <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
@@ -35,12 +35,11 @@
 &lt;p&gt;&lt;code&gt;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%%40telecom&amp;amp;user_password=你的校园网密码。&lt;/code&gt;&lt;br&gt;
 其中，user_account就是学号；user_password就是密码；login_method是运营商信息。里面信息不需要全部保留也可以登录校园网，保留至user_password的结束位置也能登陆。&lt;br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;在搜索栏直接粘贴上文所说的url点击回车，若出现下图的情况即联网成功。&lt;br&gt;
-&lt;br&gt;
-&lt;strong&gt;原理可行！&lt;/strong&gt;&lt;br&gt;
-那我只要每次开机的时候电脑能自动访问这段url那不就自动登录校园网了吗？&lt;br&gt;
-&lt;code&gt;直接进行实操!&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在搜索栏直接粘贴上文所说的url点击回车，若出现下图的情况即联网成功。&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;原理可行！&lt;/strong&gt;&lt;br&gt;
+那我只要每次开机的时候电脑能自动访问这段url那不就自动登录校园网了吗？&lt;br&gt;
+&lt;code&gt;直接进行实操!&lt;/code&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;2实际操作&#34;&gt;2、实际操作
 &lt;/h2&gt;&lt;ul&gt;
