@@ -10,7 +10,7 @@
 <meta property='og:description' content="开机自启动，循环检测">
 <meta property='og:url' content='https://ayljzj.github.io/p/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/'>
 <meta property='og:site_name' content='暗影流金的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-12-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-29T22:13:00&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-12-29T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-30T08:34:57&#43;08:00'/>
 <meta name="twitter:title" content="江西理工大学校园网自动登录">
 <meta name="twitter:description" content="开机自启动，循环检测">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -315,14 +315,14 @@
             <div>
                 
                 创建日期:
-                <time class="article-time--published">2024-12-25</time>
+                <time class="article-time--published">2024-12-29</time>
             </div>
         
         <div class="article-lastmod">
                
                 最后修改:
                 <time>
-                    2024-12-29 22:13
+                    2024-12-30 08:34
                 </time>
             </div>
     </footer>
@@ -340,9 +340,12 @@
 <p>“NetWork”</p>
 </blockquote>
 <h2 id="前言">前言
-</h2><p>这篇文章针对本人的需求设计而来，也为了需要自动登录校园网的同学提供一个相关思路。<br>
-&amp;nbsp本文所处的地理位置为：江西理工大学三江校区（东区）<br>&amp;nbsp网络环境：电信网<br>
-由于电信网的原因，每登录24小时，网络就会自动断开，又要去浏览器页面重新登陆（对于一个把电脑扔在工作室的人来说，这是一件令人头疼的事）<br></p>
+</h2><p>这篇文章针对本人的需求设计而来，也为了需要自动登录校园网的同学提供一个相关思路。<br></p>
+<ul>
+<li>本文所处的地理位置为：江西理工大学三江校区（东区）<br></li>
+<li>网络环境：电信网<br>
+由于电信网的原因，每登录24小时，网络就会自动断开，又要去浏览器页面重新登陆（对于一个把电脑扔在工作室的人来说，这是一件令人头疼的事）<br></li>
+</ul>
 <hr>
 <h2 id="1原理">1、原理
 </h2><p>首先打开<a class="link" href="http://10.17.8.18/"  target="_blank" rel="noopener"
@@ -431,7 +434,9 @@
 注意：start &quot;&quot; &ldquo;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;login_method=1&amp;user_account=你的校园网账号%%40telecom&amp;user_password=你的校园网密码&rdquo;<br>
 这段代码的url需要你自己通过上面的方法去获取。<br>
 <font color=red>接下来最重要的事一定要仔细看！</font><br>
-<font color=red>接下来最重要的事一定要仔细看！</font><br><font color=red>接下来最重要的事一定要仔细看！</font><br><font color=red>重要的事说三遍！！！</font><br>
+<font color=red>接下来最重要的事一定要仔细看！</font><br>
+<font color=red>接下来最重要的事一定要仔细看！</font><br>
+<font color=red>重要的事说三遍！！！</font><br>
 请检查你自己所获取到的url，在<code>校园网账号</code>后面应该会有<code>%40</code>字符，由于复制进脚本后，由脚本通过start命令发起访问会将<code>%40</code>识别为@，从而导致输进浏览器的url缺失这一关键信息<br>
 解决方法为在<code>%40</code>这个字符前再加一个<code>%</code>，这样就能确保url的正确读取并访问。<br>
 接下来运行这个.bat文件，就会自动向校园网登录端发送请求，然后登录你的校园网账号，并且每五分钟会ping一次百度的网站。<br>
@@ -467,7 +472,7 @@
 
 
         <span>
-            最后更新于 2024-12-29 22:13
+            最后更新于 2024-12-30 08:34
         </span>
     </section></footer>
 
@@ -539,7 +544,7 @@
         
         
 
-        <p>发布了 9 篇文章 | 共 4630 字</p>
+        <p>发布了 9 篇文章 | 共 4612 字</p>
 
 
 

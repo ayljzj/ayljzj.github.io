@@ -7,19 +7,22 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>暗影流金</copyright>
-        <lastBuildDate>Sun, 29 Dec 2024 22:13:00 +0800</lastBuildDate><atom:link href="https://ayljzj.github.io/categories/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 30 Dec 2024 08:34:57 +0800</lastBuildDate><atom:link href="https://ayljzj.github.io/categories/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>江西理工大学校园网自动登录</title>
         <link>https://ayljzj.github.io/p/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</link>
-        <pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate>
+        <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
         
         <guid>https://ayljzj.github.io/p/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;“NetWork”&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言
-&lt;/h2&gt;&lt;p&gt;这篇文章针对本人的需求设计而来，也为了需要自动登录校园网的同学提供一个相关思路。&lt;br&gt;
-&amp;amp;nbsp本文所处的地理位置为：江西理工大学三江校区（东区）&lt;br&gt;&amp;amp;nbsp网络环境：电信网&lt;br&gt;
-由于电信网的原因，每登录24小时，网络就会自动断开，又要去浏览器页面重新登陆（对于一个把电脑扔在工作室的人来说，这是一件令人头疼的事）&lt;br&gt;&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;这篇文章针对本人的需求设计而来，也为了需要自动登录校园网的同学提供一个相关思路。&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本文所处的地理位置为：江西理工大学三江校区（东区）&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;网络环境：电信网&lt;br&gt;
+由于电信网的原因，每登录24小时，网络就会自动断开，又要去浏览器页面重新登陆（对于一个把电脑扔在工作室的人来说，这是一件令人头疼的事）&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;1原理&#34;&gt;1、原理
 &lt;/h2&gt;&lt;p&gt;首先打开&lt;a class=&#34;link&#34; href=&#34;http://10.17.8.18/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -108,7 +111,9 @@
 注意：start &amp;quot;&amp;quot; &amp;ldquo;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%%40telecom&amp;amp;user_password=你的校园网密码&amp;rdquo;&lt;br&gt;
 这段代码的url需要你自己通过上面的方法去获取。&lt;br&gt;
 &lt;font color=red&gt;接下来最重要的事一定要仔细看！&lt;/font&gt;&lt;br&gt;
-&lt;font color=red&gt;接下来最重要的事一定要仔细看！&lt;/font&gt;&lt;br&gt;&lt;font color=red&gt;接下来最重要的事一定要仔细看！&lt;/font&gt;&lt;br&gt;&lt;font color=red&gt;重要的事说三遍！！！&lt;/font&gt;&lt;br&gt;
+&lt;font color=red&gt;接下来最重要的事一定要仔细看！&lt;/font&gt;&lt;br&gt;
+&lt;font color=red&gt;接下来最重要的事一定要仔细看！&lt;/font&gt;&lt;br&gt;
+&lt;font color=red&gt;重要的事说三遍！！！&lt;/font&gt;&lt;br&gt;
 请检查你自己所获取到的url，在&lt;code&gt;校园网账号&lt;/code&gt;后面应该会有&lt;code&gt;%40&lt;/code&gt;字符，由于复制进脚本后，由脚本通过start命令发起访问会将&lt;code&gt;%40&lt;/code&gt;识别为@，从而导致输进浏览器的url缺失这一关键信息&lt;br&gt;
 解决方法为在&lt;code&gt;%40&lt;/code&gt;这个字符前再加一个&lt;code&gt;%&lt;/code&gt;，这样就能确保url的正确读取并访问。&lt;br&gt;
 接下来运行这个.bat文件，就会自动向校园网登录端发送请求，然后登录你的校园网账号，并且每五分钟会ping一次百度的网站。&lt;br&gt;
