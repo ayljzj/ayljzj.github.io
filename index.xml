@@ -177,7 +177,7 @@
 &lt;p&gt;请检查你自己所获取到的url，在&lt;code&gt;校园网账号&lt;/code&gt;后面应该会有&lt;code&gt;%40&lt;/code&gt;字符，由于复制进脚本后，由脚本通过start命令发起访问会将&lt;code&gt;%40&lt;/code&gt;识别为@，从而导致输进浏览器的url缺失这一关键信息&lt;br&gt;
 若不进行修改就会导致下图的访问结果。&lt;br&gt;
 &lt;img src=&#34;./auto-login-net-jxust.assets/login-fail.png&#34; width=&#34;70%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;
-解决方法为在&lt;code&gt;%40&lt;/code&gt;这个字符前再加一个&lt;code&gt;%&lt;/code&gt;，这样就能确保url的正确读取并访问。&lt;br&gt;
+&lt;font color=red&gt;解决方法：&lt;/font&gt;在&lt;code&gt;%40&lt;/code&gt;这个字符前再加一个&lt;code&gt;%&lt;/code&gt;，这样就能确保url的正确读取并访问。&lt;br&gt;
 接下来运行这个.bat文件，就会自动向校园网登录端发送请求，然后登录你的校园网账号，并且每五分钟会ping一次百度的网站。&lt;br&gt;
 若ping不通，则会再次执行登录请求。&lt;br&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -285,7 +285,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    if errorlevel 1 (
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        echo 无网络连接（百度和qq.com都 ping 超时），尝试在浏览器中访问登录页面...
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        :: 指定浏览器路径（假设使用 Chrome）打开指定网址
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        start &amp;#34;&amp;#34; &amp;#34;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=1520193097%%40telecom&amp;amp;user_password=AYLJ0629520zj&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        start &amp;#34;&amp;#34; &amp;#34;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%%40telecom&amp;amp;user_password=你的校园网密码&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        echo 登录页面已在浏览器中打开。
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        :: 获取当前连接的 SSID
@@ -307,7 +307,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            timeout /t 10 &amp;gt;nul
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            echo 连接操作完成。
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        )
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;start &amp;#34;&amp;#34; &amp;#34;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=1520193097%%40telecom&amp;amp;user_password=AYLJ0629520zj&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;start &amp;#34;&amp;#34; &amp;#34;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;amp;login_method=1&amp;amp;user_account=你的校园网账号%%40telecom&amp;amp;user_password=你的校园网密码&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ) else (
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        echo 网络连接正常（qq.com ping 通），跳过登录操作...
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    )
