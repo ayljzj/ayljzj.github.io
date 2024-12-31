@@ -10,7 +10,7 @@
 <meta property='og:description' content="开机自启动，循环检测">
 <meta property='og:url' content='https://ayljzj.github.io/p/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/'>
 <meta property='og:site_name' content='暗影流金的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-12-29T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-31T08:41:08&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-12-29T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-31T13:50:38&#43;08:00'/>
 <meta name="twitter:title" content="江西理工大学校园网自动登录">
 <meta name="twitter:description" content="开机自启动，循环检测">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -323,7 +323,7 @@
                
                 最后修改:
                 <time>
-                    2024-12-31 08:41
+                    2024-12-31 13:50
                 </time>
             </div>
     </footer>
@@ -470,7 +470,9 @@
 <img src="./auto-login-net-jxust.assets/start.png" width="70%" align="center" /><br></p>
 <h2 id="补充">补充
 </h2><p>有的时候电脑开机后没有自动连接到校园网，自然也无法完成登录请求。<br>
-所以在ping不通网络后增加增加一段操作，使电脑先连接校园网再执行登录操作。<br>
+由于只ping一个站点有时会造成误判，从而反复执行。所以增加一次操作，对baidu.com和qq.com均ping一次，<br>
+只有在两次都ping不通的情况下，才会去执行操作，使电脑先连接校园网再执行登录操作。<br>
+对代码循环执行时间调整为10分钟一次<br>
 本校的校园网名称为“JXUST-WLAN”，所以经过修改后的代码应该这么写：<br></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -523,6 +525,16 @@
 </span><span class="lnt">47
 </span><span class="lnt">48
 </span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@echo off
@@ -537,41 +549,51 @@
 </span></span><span class="line"><span class="cl">set /a counter+=1
 </span></span><span class="line"><span class="cl">:: 输出当前是第几次判断
 </span></span><span class="line"><span class="cl">echo 当前为第 !counter! 次判断。
-</span></span><span class="line"><span class="cl">:: 检测是否有网络连接（超时 10 秒）
+</span></span><span class="line"><span class="cl">:: 检测是否有网络连接（ping baidu.com 或 qq.com，超时 10 秒）
 </span></span><span class="line"><span class="cl">ping -n 1 -w 10000 baidu.com &gt;nul 2&gt;&amp;1
 </span></span><span class="line"><span class="cl">if errorlevel 1 (
-</span></span><span class="line"><span class="cl">    echo 无网络连接（ping超时10秒），尝试在浏览器中访问登录页面...
-</span></span><span class="line"><span class="cl">    :: 指定浏览器路径（假设使用 Chrome）打开指定网址
-</span></span><span class="line"><span class="cl">    start &#34;&#34; &#34;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;login_method=1&amp;user_account=1520193097%%40telecom&amp;user_password=AYLJ0629520zj&#34;
-</span></span><span class="line"><span class="cl">    echo 登录页面已在浏览器中打开。
-</span></span><span class="line"><span class="cl">    :: 获取当前连接的 SSID
-</span></span><span class="line"><span class="cl">    for /f &#34;tokens=2 delims=:&#34; %%i in (&#39;netsh wlan show interfaces ^| findstr /i &#34;SSID&#34;&#39;) do (
-</span></span><span class="line"><span class="cl">        set currentSSID=%%i
-</span></span><span class="line"><span class="cl">        :: 去除前后空格
-</span></span><span class="line"><span class="cl">        set currentSSID=!currentSSID: =!
-</span></span><span class="line"><span class="cl">    )
-</span></span><span class="line"><span class="cl">    :: 判断是否已经连接到指定的 WLAN 网络
-</span></span><span class="line"><span class="cl">    if /i &#34;%currentSSID%&#34;==&#34;%SSID%&#34; (
-</span></span><span class="line"><span class="cl">        echo 已经连接到网络 %SSID%，跳过连接操作。
-</span></span><span class="line"><span class="cl">    ) else (
-</span></span><span class="line"><span class="cl">        echo 未连接到指定网络 %SSID%，尝试连接...
-</span></span><span class="line"><span class="cl">        :: 执行连接操作
-</span></span><span class="line"><span class="cl">        netsh wlan connect name=%SSID%
+</span></span><span class="line"><span class="cl">    echo 百度 ping 超时，尝试 ping qq.com...
+</span></span><span class="line"><span class="cl">    ping -n 1 -w 10000 qq.com &gt;nul 2&gt;&amp;1
+</span></span><span class="line"><span class="cl">    if errorlevel 1 (
+</span></span><span class="line"><span class="cl">        echo 无网络连接（百度和qq.com都 ping 超时），尝试在浏览器中访问登录页面...
+</span></span><span class="line"><span class="cl">        :: 指定浏览器路径（假设使用 Chrome）打开指定网址
+</span></span><span class="line"><span class="cl">        start &#34;&#34; &#34;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;login_method=1&amp;user_account=1520193097%%40telecom&amp;user_password=AYLJ0629520zj&#34;
+</span></span><span class="line"><span class="cl">        echo 登录页面已在浏览器中打开。
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        :: 等待一段时间，确保网络连接
-</span></span><span class="line"><span class="cl">        timeout /t 10 &gt;nul
-</span></span><span class="line"><span class="cl">        echo 连接操作完成。
-</span></span><span class="line"><span class="cl">    )
+</span></span><span class="line"><span class="cl">        :: 获取当前连接的 SSID
+</span></span><span class="line"><span class="cl">        for /f &#34;tokens=2 delims=:&#34; %%i in (&#39;netsh wlan show interfaces ^| findstr /i &#34;SSID&#34;&#39;) do (
+</span></span><span class="line"><span class="cl">            set currentSSID=%%i
+</span></span><span class="line"><span class="cl">            :: 去除前后空格
+</span></span><span class="line"><span class="cl">            set currentSSID=!currentSSID: =!
+</span></span><span class="line"><span class="cl">        )
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        :: 判断是否已经连接到指定的 WLAN 网络
+</span></span><span class="line"><span class="cl">        if /i &#34;%currentSSID%&#34;==&#34;%SSID%&#34; (
+</span></span><span class="line"><span class="cl">            echo 已经连接到网络 %SSID%，跳过连接操作。
+</span></span><span class="line"><span class="cl">        ) else (
+</span></span><span class="line"><span class="cl">            echo 未连接到指定网络 %SSID%，尝试连接...
+</span></span><span class="line"><span class="cl">            :: 执行连接操作
+</span></span><span class="line"><span class="cl">            netsh wlan connect name=%SSID%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            :: 等待一段时间，确保网络连接
+</span></span><span class="line"><span class="cl">            timeout /t 10 &gt;nul
+</span></span><span class="line"><span class="cl">            echo 连接操作完成。
+</span></span><span class="line"><span class="cl">        )
 </span></span><span class="line"><span class="cl">start &#34;&#34; &#34;http://10.17.8.18:801/eportal/portal/login?callback=dr1003&amp;login_method=1&amp;user_account=1520193097%%40telecom&amp;user_password=AYLJ0629520zj&#34;
+</span></span><span class="line"><span class="cl">    ) else (
+</span></span><span class="line"><span class="cl">        echo 网络连接正常（qq.com ping 通），跳过登录操作...
+</span></span><span class="line"><span class="cl">    )
 </span></span><span class="line"><span class="cl">) else (
-</span></span><span class="line"><span class="cl">    echo 网络连接正常，跳过登录操作...
+</span></span><span class="line"><span class="cl">    echo 网络连接正常（baidu.com ping 通），跳过登录操作...
 </span></span><span class="line"><span class="cl">)
-</span></span><span class="line"><span class="cl">:: 倒计时循环输出（每分钟输出一次）
-</span></span><span class="line"><span class="cl">for /l %%i in (5,-1,1) do (
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">:: 倒计时循环输出（每 10 分钟输出一次）
+</span></span><span class="line"><span class="cl">for /l %%i in (10,-1,1) do (
 </span></span><span class="line"><span class="cl">    set /a minutes=%%i
 </span></span><span class="line"><span class="cl">    echo 倒计时（结束后会检测网络）：!minutes! 分
 </span></span><span class="line"><span class="cl">    timeout /t 60 &gt;nul
 </span></span><span class="line"><span class="cl">)
+</span></span><span class="line"><span class="cl">echo 倒计时结束，开始检测网络...
 </span></span><span class="line"><span class="cl">:: 循环检测
 </span></span><span class="line"><span class="cl">goto loop
 </span></span></code></pre></td></tr></table>
@@ -597,7 +619,7 @@
 
 
         <span>
-            最后更新于 2024-12-31 08:41
+            最后更新于 2024-12-31 13:50
         </span>
     </section></footer>
 
@@ -671,7 +693,7 @@
         
         
 
-        <p>发布了 10 篇文章 | 共 5430 字</p>
+        <p>发布了 10 篇文章 | 共 5623 字</p>
 
 
 
