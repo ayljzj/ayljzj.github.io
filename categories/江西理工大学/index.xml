@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>暗影流金</copyright>
-        <lastBuildDate>Tue, 31 Dec 2024 13:50:38 +0800</lastBuildDate><atom:link href="https://ayljzj.github.io/categories/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 31 Dec 2024 13:53:27 +0800</lastBuildDate><atom:link href="https://ayljzj.github.io/categories/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>江西理工大学校园网自动登录</title>
         <link>https://ayljzj.github.io/p/%E6%B1%9F%E8%A5%BF%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/</link>
         <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
@@ -277,8 +277,7 @@
 &lt;/div&gt;&lt;br&gt;
 &lt;big&gt;至此，全部完成&lt;/big&gt;&lt;br&gt;
 最后实现的效果如下图所示：&lt;br&gt;
-&lt;img src=&#34;./auto-login-net-jxust.assets/final.png&#34; width=&#34;60%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;
-</description>
+&lt;img src=&#34;./auto-login-net-jxust.assets/final.png&#34; width=&#34;50%&#34; align=&#34;center&#34; /&gt;&lt;br&gt;</description>
         </item>
         
     </channel>
