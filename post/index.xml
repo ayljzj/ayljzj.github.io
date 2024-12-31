@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>暗影流金</copyright>
-        <lastBuildDate>Tue, 31 Dec 2024 00:41:36 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 31 Dec 2024 01:01:42 +0000</lastBuildDate><atom:link href="https://ayljzj.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>markdown语法快速复制</title>
         <link>https://ayljzj.github.io/p/markdown%E8%AF%AD%E6%B3%95%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6/</link>
         <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
@@ -777,23 +777,26 @@ problems文件夹中存放问题以及Axiom公理集，测试完output中会存�
 &lt;/div&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://publish.obsidian.md/chinesehelp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;obsidian常用技巧&lt;/a&gt;，
 &lt;a class=&#34;link&#34; href=&#34;https://forum-zh.obsidian.md/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;中文论坛&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;龙行天下&lt;br&gt;
-注册手机一加12&lt;br&gt;
-2024年6月&lt;br&gt;
-江西赣州&lt;br&gt;&lt;/p&gt;
+    &gt;中文论坛&lt;/a&gt;&lt;br&gt;
+小号QQ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;龙行天下&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;注册手机一加12&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;2024年6月&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;江西赣州&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;沙滩树教程&#34;&gt;沙滩树教程
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;想种沙滩树要先种压岸树&lt;/strong&gt;&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;big&gt;&lt;font color=blue&gt;想种沙滩树要先种压岸树！&lt;/font&gt;&lt;/big&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h3 id=&#34;1压岸树&#34;&gt;1压岸树
 &lt;/h3&gt;&lt;p&gt;压岸树首先将基地左上角靠山的位置空出来，别的位置用建筑填上，建筑直接的间隔不要留有大于(包括)2×2的位置（防止长树），确保树往左上角长。&lt;br&gt;
-&lt;img src=&#34;./boom-beach.assets/沙滩树1.png&#34; width=&#34;50%&#34; align=&#34;center&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;./boom-beach.assets/沙滩树1.png&#34; width=&#34;70%&#34; align=&#34;center&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2砍部分树&#34;&gt;2砍部分树
 &lt;/h3&gt;&lt;p&gt;当树长的较多的时候，可以将靠近上方的树砍掉，然后用建筑堵住，防止长回去，将树生长的方向挤向岸边。&lt;br&gt;
-&lt;img src=&#34;./boom-beach.assets/沙滩树2.png&#34; width=&#34;50%&#34; align=&#34;center&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;./boom-beach.assets/沙滩树2.png&#34; width=&#34;70%&#34; align=&#34;center&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;3挂脚本&#34;&gt;3挂脚本
 &lt;/h3&gt;&lt;p&gt;当岸边长满树的时候，或者长较多树的时候，可以尝试开始挂航母脚本，促进沙滩树的生长。&lt;br&gt;
-&lt;img src=&#34;./boom-beach.assets/沙滩树3.png&#34; width=&#34;50%&#34; align=&#34;center&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;./boom-beach.assets/沙滩树3.png&#34; width=&#34;70%&#34; align=&#34;center&#34; /&gt;&lt;/p&gt;
 </description>
         </item>
         
